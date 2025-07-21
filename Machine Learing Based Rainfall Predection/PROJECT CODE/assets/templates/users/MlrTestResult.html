@@ -1,0 +1,35 @@
+{%extends 'users/userbase.html'%}
+{%block contents %}
+					<p class="news text-white">
+                        <h3>User MLR Test Result Page</h3>
+<table border="2">
+    <tr>
+        <th>Algorithm</th>
+        <th>MSE</th>
+        <th>RMSE</th>
+        <th>Correlations</th>
+    </tr>
+
+    <tr>
+        <td>LG</td>
+        <td>{{lgmse}}</td>
+        <td>{{lgrmse}}</td>
+        <td>{{lgcorr}}</td>
+    </tr>
+     <tr>
+        <td>MLR</td>
+        <td>{{mlrmse}}</td>
+        <td>{{mlrrmse}}</td>
+        <td>{{mlrcorr}}</td>
+    </tr>
+     <tr>
+        <td>QPF</td>
+        <td>{{qpfmse}}</td>
+        <td>{{qpfrmse}}</td>
+        <td>{{qpfcorr}}</td>
+    </tr>
+</table>
+
+</p>
+
+                    {%endblock%}

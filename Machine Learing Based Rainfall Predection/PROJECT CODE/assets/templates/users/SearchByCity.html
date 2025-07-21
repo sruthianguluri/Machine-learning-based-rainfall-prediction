@@ -1,0 +1,15 @@
+{%extends 'users/userbase.html'%}
+{%block contents %}
+					<p class="news text-white">
+<center>
+                        <h3>User Search Weather by City Page</h3>
+<form action="{%url 'GetWeatherInfo'%}" class="subscribe-form" method="post">
+{%csrf_token%}
+<input type="text" name="cityname" placeholder="Enter City Name">
+<input type="submit" value="Get Data">
+</form>
+    </center>
+
+							</p>
+
+                    {%endblock%}

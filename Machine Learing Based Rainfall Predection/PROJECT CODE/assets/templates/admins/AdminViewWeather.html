@@ -1,0 +1,87 @@
+{%extends 'admins/adminbase.html'%}
+{%block contents %}
+					<p class="news text-white">
+                        <h2>Admin View Rainfall Home Page</h2>
+
+<table class="table table-bordered bg-light text-dark" id="example" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>SUBDIVISION</th>
+        <th>JAN</th>
+        <th>FEB</th>
+        <th>MAY</th>
+        <th>APR</th>
+        <th>MAY</th>
+        <th>JUN </th>
+        <th>JULY </th>
+        <th>AUG </th>
+        <th>SEPT </th>
+        <th>OCT </th>
+        <th>NOV</th>
+        <th>DEC</th>
+        <th>ANNUAL</th>
+       <!-- <th>JanToFeb</th>
+        <th>MarToMay</th>
+        <th>JunToSep</th>
+        <th>OctToDec</th>-->
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in users %}
+                                            <tr style="color: Black">
+                                                <td>{{i.id}}</td>
+                                                <td>{{i.SUBDIVISION}}</td>
+                                                <td>{{i.JAN}}</td>
+                                                <td>{{i.FEB}}</td>
+                                                <td>{{i.MAR}}</td>
+                                                <td>{{i.APR}}</td>
+                                                <td>{{i.MAY}}</td>
+                                                <td>{{i.JUN}}</td>
+                                                <td>{{i.JUL}}</td>
+                                                <td>{{i.AUG}}</td>
+                                                <td>{{i.SEP}}</td>
+                                                <td>{{i.OCT}}</td>
+                                                <td>{{i.NOV}}</td>
+                                                <td>{{i.DEC}}</td>
+                                                <td>{{i.ANNUAL}}</td>
+                                               <!-- <td>{{i.JanToFeb}}</td>
+                                                <td>{{i.MarToMay}}</td>
+                                                <td>{{i.JunToSep}}</td>
+                                                <td>{{i.OctToDec}}</td>-->
+
+
+
+
+                                            </tr>
+                                            {% endfor %}
+
+    </tbody>
+  </table>
+{% if users.has_other_pages %}
+  <ul class="pagination">
+    {% if users.has_previous %}
+      <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in users.paginator.page_range %}
+      {% if users.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if users.has_next %}
+      <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+
+					</p>
+
+                    {%endblock%}

@@ -1,0 +1,96 @@
+{%load static%}
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+		<title>Compass Starter by Ariona, Rian</title>
+
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+		<link href="{%static 'fonts/font-awesome.min.css'%}" rel="stylesheet" type="text/css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="{%static 'style.css'%}">
+
+		<!--[if lt IE 9]>
+		<script src="{%static 'js/ie-support/html5.js'%}"></script>
+		<script src="{%static 'js/ie-support/respond.js'%}"></script>
+		<![endif]-->
+
+	</head>
+
+
+	<body>
+
+		<div class="site-content">
+			<div class="site-header">
+				<div class="container">
+					<a href="index.html" class="branding">
+						<img src="{%static 'images/logo.png'%}" alt="" class="logo">
+						<div class="logo-type">
+							<h1 class="site-title">Rainfall Prediction</h1>
+							<small class="site-description">Machine Learning based</small>
+						</div>
+					</a>
+
+					<!-- Default snippet for navigation -->
+					<div class="main-navigation">
+						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item current-menu-item">Admin</li>
+							<li class="menu-item"><a href="{%url 'AdminViewUsers'%}">View Users</a></li>
+							<li class="menu-item"><a href="{%url 'AdminAddData'%}">Add Data</a></li>
+							<li class="menu-item"><a href="{%url 'AdminViewData'%}">View Data</a></li>
+                            <li class="menu-item"><a href="{%url 'Logout'%}">Logout</a></li>
+
+						</ul>
+					</div>
+
+					<div class="mobile-navigation"></div>
+
+				</div>
+			</div> <!-- .site-header -->
+
+			<div class="hero" data-bg-image="{%static 'images/banner1.png'%}">
+				<div class="container">
+                    {%block contents%}
+
+                    {%endblock%}
+
+
+				</div>
+			</div>
+
+
+			<footer class="site-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+
+						</div>
+						<div class="col-md-3 col-md-offset-1">
+
+						</div>
+					</div>
+
+					<p class="colophon">Copyright 2020 Alex Corporation. Designed by Alex. All rights reserved</p>
+				</div>
+			</footer> <!-- .site-footer -->
+		</div>
+
+		<script src="{%static 'js/jquery-1.11.1.min.js'%}"></script>
+		<script src="{%static 'js/plugins.js'%}"></script>
+		<script src="{%static 'js/app.js'%}"></script>
+
+	</body>
+
+</html>

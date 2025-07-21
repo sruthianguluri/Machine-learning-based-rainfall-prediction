@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+{%block contents %}
+					<p class="news text-white">
+                        <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-2"></div>
+            <div class="col-lg-6 col-md-8 login-box">
+                <h2>User Login here</h2>
+
+                <div class="col-lg-12 login-title">
+
+                </div>
+
+                <div class="col-lg-12 login-form">
+                    <div class="col-lg-12 login-form">
+                        <form action="{%url 'UserLoginCheck'%}" method="post">
+                            {%csrf_token%}
+                            <div class="form-group">
+                                <label class="form-control-label">User Login ID</label>
+                                <input type="text" name="loginid" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">PASSWORD</label>
+                                <input type="password"  name="pswd"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="True" class="form-control" i>
+                            </div>
+
+                            <div class="col-lg-12 loginbttm">
+                                <div class="col-lg-6 login-btm login-text">
+                                    <!-- Error Message -->
+                                </div>
+                                <div class="col-lg-6 login-btm login-button">
+                                    <button type="submit" class="btn btn-primary">LOGIN</button>
+                                </div>
+                            </div>
+                        </form>
+                        {% if messages %}
+                               {% for message in messages %}
+                                  <font color='YELLOW'> {{ message }}</font>
+                               {% endfor %}
+                           {% endif %}
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+            </div>
+        </div>
+
+							</p>
+
+                    {%endblock%}

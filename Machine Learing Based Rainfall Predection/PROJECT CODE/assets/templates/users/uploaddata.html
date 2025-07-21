@@ -1,0 +1,12 @@
+{%extends 'users/userbase.html'%}
+{%block contents %}
+					<p class="news text-white">
+                        <h3>User Climate Data Upload Page</h3>
+<form class="bg-light text-dark" action="{%url 'UploadCSVToDataBase'%}" enctype="multipart/form-data" method="POST">
+{%csrf_token%}
+    select CSV File <input type="file" name="file" required>
+    <button type="submit" name="sumbit"  class="btn-primary">Submit</button>
+</form>
+							</p>
+
+                    {%endblock%}

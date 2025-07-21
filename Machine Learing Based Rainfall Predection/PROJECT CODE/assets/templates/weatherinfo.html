@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%block contents %}
+					<p class="news text-white">
+                        <center>
+    <div class="box">
+    <article class="media">
+        <div class="media-left">
+            <figure class="image is-50x50">
+                <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+            </figure>
+        </div>
+        <div class="media-content">
+            <div class="content">
+                <p>
+                    <span class="title">{{ weather.city }}</span>
+                    <br>
+                    <span class="subtitle">{{ weather.temperature }}° F</span>
+                    <br> {{ weather.description }}
+                    <br/>{{weather.message}}
+                </p>
+            </div>
+        </div>
+    </article>
+</div>
+
+        	</p>
+<form action="{%url 'GetWeatherInfo'%}" class="subscribe-form" method="post">
+	{%csrf_token%}
+<input type="text" name="cityname" placeholder="Enter City Name">
+								<input type="submit" value="Get Data">
+							</form>
+</center>
+                    {%endblock%}

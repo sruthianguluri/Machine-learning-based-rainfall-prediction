@@ -1,0 +1,67 @@
+{%extends 'users/userbase.html'%}
+{%block contents %}
+					<p class="news text-white">
+                        <h3>User Pre Processed Data from Indian meteorological Date</h3>
+
+<table class="table table-bordered bg-light text-dark" id="example" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>SUBDIVISION</th>
+        <th>YEAR</th>
+        <th>JAN</th>
+        <th>FEB</th>
+        <th>MAY</th>
+        <th>APR</th>
+        <th>MAY</th>
+        <th>JUN </th>
+        <th>JULY </th>
+        <th>AUG </th>
+        <th>SEPT </th>
+        <th>OCT </th>
+        <th>NOV</th>
+        <th>DEC</th>
+        <th>ANNUAL</th>
+       <!-- <th>JanToFeb</th>
+        <th>MarToMay</th>
+        <th>JunToSep</th>
+        <th>OctToDec</th>-->
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in data %}
+                                            <tr style="color: Black">
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{i.SUBDIVISION}}</td>
+                                                <td>{{i.YEAR}}</td>
+                                                <td>{{i.JAN}}</td>
+                                                <td>{{i.FEB}}</td>
+                                                <td>{{i.MAR}}</td>
+                                                <td>{{i.APR}}</td>
+                                                <td>{{i.MAY}}</td>
+                                                <td>{{i.JUN}}</td>
+                                                <td>{{i.JUL}}</td>
+                                                <td>{{i.AUG}}</td>
+                                                <td>{{i.SEP}}</td>
+                                                <td>{{i.OCT}}</td>
+                                                <td>{{i.NOV}}</td>
+                                                <td>{{i.DEC}}</td>
+                                                <td>{{i.ANNUAL}}</td>
+                                               <!-- <td>{{i.JanToFeb}}</td>
+                                                <td>{{i.MarToMay}}</td>
+                                                <td>{{i.JunToSep}}</td>
+                                                <td>{{i.OctToDec}}</td>-->
+
+
+
+
+                                            </tr>
+                                            {% endfor %}
+
+    </tbody>
+  </table>
+
+</p>
+
+                    {%endblock%}

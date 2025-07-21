@@ -1,0 +1,42 @@
+{%extends 'admins/adminbase.html'%}
+{%block contents %}
+					<p class="news text-white">
+<center>
+                        <h2>Admin Add rain Fall Data Page</h2>
+ <form method="POST" action="{%url 'AdminAddData'%}" class="bg-primary text-dark">
+                {% csrf_token %}
+                <table>
+                    <tr><td>SUBDIVISION</td><td>{{form.SUBDIVISION}}</td></tr>
+                    <tr><td>YEAR</td><td>{{form.YEAR}}</td></tr>
+                    <tr><td>JAN</td><td>{{form.JAN}}</td></tr>
+                    <tr><td>FEB</td><td>{{form.FEB}}</td></tr>
+                    <tr><td>MAR</td><td>{{form.MAR}}</td></tr>
+                    <tr><td>APR</td><td>{{form.APR}}</td></tr>
+                    <tr><td>MAY</td><td>{{form.MAY}}</td></tr>
+                    <tr><td>JUN</td><td>{{form.JUN}}</td></tr>
+                    <tr><td>JUL</td><td>{{form.JUL}}</td></tr>
+                    <tr><td>AUG </td><td>{{form.AUG}}</td></tr>
+                    <tr><td>SEP</td><td>{{form.SEP}}</td></tr>
+                    <tr><td>OCT</td><td>{{form.OCT}}</td></tr>
+                    <tr><td>NOV</td><td>{{form.NOV}}</td></tr>
+                    <tr><td>DEC</td><td>{{form.DEC}}</td></tr>
+                    <tr><td>ANNUAL</td><td>{{form.ANNUAL}}</td></tr>
+                    <tr><td>JanToFeb</td><td>{{form.JanToFeb}}</td></tr>
+                    <tr><td>MarToMay</td><td>{{form.MarToMay}}</td></tr>
+                    <tr><td>JunToSep</td><td>{{form.JunToSep}}</td></tr>
+                    <tr><td>OctToDec</td><td>{{form.OctToDec}}</td></tr>
+                    <tr><td><button  class="btn btn-danger my-2 my-sm-0" type="submit" style = "margin-left:20%;">Add Data</button></td></tr>
+
+                        {% if messages %}
+                               {% for message in messages %}
+                                  <font color='yellow'> {{ message }}</font>
+                               {% endfor %}
+                           {% endif %}
+
+                </table>
+
+            </form>
+</center>
+						</p>
+
+                    {%endblock%}
